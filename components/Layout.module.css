@@ -1,0 +1,39 @@
+.header {
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #00141e;
+  margin-bottom: 16px;
+}
+
+.header nav ul {
+  display: flex;
+}
+
+.header nav ul li {
+  margin-right: 10px;
+}
+
+.header nav ul li a {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.container {
+  width: 100%;
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  border-radius: 8px;
+}
+
+.light {
+  background: #00141e;
+}

@@ -14,13 +14,11 @@ interface RacesProps {
 const Home: NextPage<RacesProps> = ({ races }) => {
   return (
     <Layout>
-      <h1>Homepage</h1>
       <ul>
         {races.map((race) => (
           <li key={race.round}>
             <p>{race.raceName}</p>
-            <p>{race.date}</p>
-            <p>{race.time}</p>
+            <p>{new Date(`${race.date}T${race.time}`).toLocaleString()}</p>
           </li>
         ))}
       </ul>

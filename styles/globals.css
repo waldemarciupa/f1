@@ -1,5 +1,8 @@
 html,
 body {
+  background: #010a0f;
+  color: #eee;
+  font-size: 14px;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -9,6 +12,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 * {

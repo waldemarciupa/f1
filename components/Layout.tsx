@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import styles from './Layout.module.css';
 
 type Props = {
   children?: ReactNode;
@@ -15,19 +16,39 @@ const Layout = ({ children, title = 'F1 - 2022' }: Props) => {
         <meta charSet='utf-8' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
-      <header>
-        <nav>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
-          <Link href='/drivers'>
-            <a>Drivers</a>
-          </Link>
-        </nav>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <div className={styles.logo}>
+            <Link href='/'>
+              <a>F1 2022</a>
+            </Link>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <Link href='/races'>
+                  <a>Races</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/drivers'>
+                  <a>Drivers</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/standings'>
+                  <a>Standings</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
-      <main>{children}</main>
+      <main className={`${styles.container} ${styles.light}`}>{children}</main>
       <footer>
-        <span>I&apos;m footer</span>
+        <div className={styles.container}>
+          <span>I&apos;m footer</span>
+        </div>
       </footer>
     </>
   );
