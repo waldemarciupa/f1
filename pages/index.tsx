@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
+import RacesList from '../components/RacesList/RacesList';
 
 interface RacesProps {
   races: {
@@ -14,14 +15,7 @@ interface RacesProps {
 const Home: NextPage<RacesProps> = ({ races }) => {
   return (
     <Layout>
-      <ul>
-        {races.map((race) => (
-          <li key={race.round}>
-            <p>{race.raceName}</p>
-            <p>{new Date(`${race.date}T${race.time}`).toLocaleString()}</p>
-          </li>
-        ))}
-      </ul>
+      <RacesList races={races} />
     </Layout>
   );
 };
