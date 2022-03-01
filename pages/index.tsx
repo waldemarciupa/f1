@@ -1,14 +1,18 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from '../apollo-client';
 import Layout from '../components/Layout';
 import RacesList from '../components/RacesList/RacesList';
 
 interface RacesProps {
   races: {
-    raceName: string;
-    round: string;
+    name: string;
     date: Date;
     time: Date;
+    circuit: {
+      id: string;
+    };
   }[];
 }
 
@@ -21,13 +25,24 @@ const Home: NextPage<RacesProps> = ({ races }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://ergast.com/api/f1/2022/races.json');
-  const data = await res.json();
-  const races = data.MRData.RaceTable.Races;
+  const { data } = await client.query({
+    query: gql`
+      query RacesByYear {
+        racesByYear(year: "2022") {
+          name
+          circuit {
+            id
+          }
+          date
+          time
+        }
+      }
+    `,
+  });
 
   return {
     props: {
-      races,
+      races: data.racesByYear,
     },
   };
 };
