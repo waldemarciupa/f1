@@ -7,19 +7,19 @@ import RacesList from '../components/RacesList/RacesList';
 
 interface RacesProps {
   races: {
-    id: String;
-    season: String;
-    round: String;
-    name: String;
-    location: String;
-    country: String;
-    url: String;
+    id: string;
+    season: string;
+    round: string;
+    name: string;
+    location: string;
+    country: string;
+    url: string;
     sessions: {
-      fp1: String;
-      fp2: String;
-      fp3: String;
-      qualifying: String;
-      gp: String;
+      fp1: string;
+      fp2: string;
+      fp3: string;
+      qualifying: string;
+      gp: string;
     };
   }[];
 }

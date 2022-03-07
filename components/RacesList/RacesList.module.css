@@ -1,6 +1,11 @@
 .raceElement {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0 10px;
   font-weight: 600;
+}
+
+.imageWrapper {
+  width: 48px;
+  height: 32px;
 }

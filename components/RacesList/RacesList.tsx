@@ -3,10 +3,11 @@ import RaceElement from './RaceElement';
 
 interface RacesProps {
   races: {
-    id: String;
-    name: String;
+    id: string;
+    name: string;
+    country: string;
     sessions: {
-      gp: String;
+      gp: string;
     };
   }[];
 }
@@ -16,9 +17,10 @@ const RacesList = ({ races }: RacesProps) => {
     <ul>
       {races.map((race) => (
         <RaceElement
-          key={`${race.id}`}
+          key={race.id}
           name={race.name}
-          sessions={race.sessions.gp}
+          country={race.country}
+          raceTime={race.sessions.gp}
         />
       ))}
     </ul>
