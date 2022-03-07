@@ -7,34 +7,45 @@ import RacesList from '../components/RacesList/RacesList';
 
 interface RacesProps {
   races: {
-    name: string;
-    date: Date;
-    time: Date;
-    circuit: {
-      id: string;
+    id: String;
+    season: String;
+    round: String;
+    name: String;
+    location: String;
+    country: String;
+    url: String;
+    sessions: {
+      fp1: String;
+      fp2: String;
+      fp3: String;
+      qualifying: String;
+      gp: String;
     };
   }[];
 }
-
 const Home: NextPage<RacesProps> = ({ races }) => {
-  return (
-    <Layout>
-      <RacesList races={races} />
-    </Layout>
-  );
+  return <Layout>{<RacesList races={races} />}</Layout>;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
-      query RacesByYear {
-        racesByYear(year: "2022") {
+      query Races {
+        races {
+          id
+          season
+          round
           name
-          circuit {
-            id
+          location
+          country
+          url
+          sessions {
+            fp1
+            fp2
+            fp3
+            qualifying
+            gp
           }
-          date
-          time
         }
       }
     `,
@@ -42,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      races: data.racesByYear,
+      races: data.races,
     },
   };
 };
