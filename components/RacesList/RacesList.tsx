@@ -1,5 +1,5 @@
 import React from 'react';
-import RaceElement from './RaceElement';
+import RaceElement from '../RaceElement/RaceElement';
 
 interface RacesProps {
   races: {

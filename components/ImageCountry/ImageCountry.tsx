@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './RacesList.module.css';
+import styles from './ImageCountry.module.css';
 
 interface ImageProps {
   country?: string;
