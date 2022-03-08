@@ -1,0 +1,4 @@
+.racesList li:nth-child(2n + 1) {
+  background: #00141e;
+  border-radius: 4px;
+}

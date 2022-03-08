@@ -16,7 +16,7 @@ const Layout = ({ children, title = 'F1 - 2022' }: Props) => {
         <meta charSet='utf-8' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${styles.lightColor}`}>
         <div className={styles.container}>
           <div className={styles.logo}>
             <Link href='/'>
@@ -44,7 +44,7 @@ const Layout = ({ children, title = 'F1 - 2022' }: Props) => {
           </nav>
         </div>
       </header>
-      <main className={`${styles.container} ${styles.light}`}>{children}</main>
+      <main className={styles.container}>{children}</main>
       <footer>
         <div className={styles.container}>
           <span>I&apos;m footer</span>

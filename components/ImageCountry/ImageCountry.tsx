@@ -8,7 +8,7 @@ interface ImageProps {
 const ImageCountry = ({ country }: ImageProps) => {
   return (
     <div className={styles.imageWrapper}>
-      <Image width='48px' height='32px' src={`/${country}.jpg`} alt={country} />
+      <Image width='40px' height='26px' src={`/${country}.jpg`} alt={country} />
     </div>
   );
 };

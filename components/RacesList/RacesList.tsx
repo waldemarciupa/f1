@@ -1,5 +1,5 @@
-import React from 'react';
 import RaceElement from '../RaceElement/RaceElement';
+import styles from './RacesList.module.css';
 
 interface RacesProps {
   races: {
@@ -14,7 +14,7 @@ interface RacesProps {
 
 const RacesList = ({ races }: RacesProps) => {
   return (
-    <ul>
+    <ul className={styles.racesList}>
       {races.map((race) => (
         <RaceElement
           key={race.id}

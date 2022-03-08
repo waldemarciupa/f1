@@ -17,12 +17,16 @@ const RaceElement = ({ name, country, raceTime }: RaceProps) => {
   return (
     <li className={styles.raceElement}>
       <ImageCountry country={country} />
-      <p>{country}</p>
       <p>{name}</p>
-      <p>
+      <p className={styles.raceTime}>
         {dayjs(`${raceTime}`)
           .tz(Intl.DateTimeFormat().resolvedOptions().timeZone)
-          .format('D MMM YYYY H:mm ')}
+          .format('D MMMM')}
+      </p>
+      <p className={styles.raceTime}>
+        {dayjs(`${raceTime}`)
+          .tz(Intl.DateTimeFormat().resolvedOptions().timeZone)
+          .format('H:mm')}
       </p>
     </li>
   );
