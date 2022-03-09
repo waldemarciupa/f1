@@ -6,6 +6,9 @@ interface RacesProps {
     id: string;
     name: string;
     country: string;
+    circuit: {
+      country: string;
+    };
     sessions: {
       gp: string;
     };
@@ -19,7 +22,7 @@ const RacesList = ({ races }: RacesProps) => {
         <RaceElement
           key={race.id}
           name={race.name}
-          country={race.country}
+          country={race.circuit.country}
           raceTime={race.sessions.gp}
         />
       ))}
