@@ -46,8 +46,11 @@ const Layout = ({ children, title = 'F1 - 2022' }: Props) => {
       </header>
       <main className={styles.container}>{children}</main>
       <footer>
-        <div className={styles.container}>
-          <span>I&apos;m footer</span>
+        <div className={`${styles.container} ${styles.footerContainer}`}>
+          <span>
+            &copy; <a href='https://github.com/waldemarciupa'>Waldemar Ciupa</a>{' '}
+            2022
+          </span>
         </div>
       </footer>
     </>

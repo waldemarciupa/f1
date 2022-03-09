@@ -35,6 +35,16 @@
   border-radius: 8px;
 }
 
+.footerContainer {
+  font-size: 14px;
+  display: grid;
+  place-content: center;
+}
+
+.footerContainer a {
+  font-weight: 600;
+}
+
 .lightColor {
   background: #00141e;
 }
