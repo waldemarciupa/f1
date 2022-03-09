@@ -14,6 +14,17 @@ interface RacesProps {
     location: string;
     country: string;
     url: string;
+    circuit: {
+      id: string;
+      name: string;
+      location: string;
+      country: string;
+      firstGrandPrix: string;
+      numberOfLaps: string;
+      circuitLength: string;
+      raceDistance: string;
+      url: string;
+    };
     sessions: {
       fp1: string;
       fp2: string;
@@ -36,9 +47,18 @@ export const getStaticProps: GetStaticProps = async () => {
           season
           round
           name
-          location
-          country
           url
+          circuit {
+            id
+            name
+            location
+            country
+            firstGrandPrix
+            numberOfLaps
+            circuitLength
+            raceDistance
+            url
+          }
           sessions {
             fp1
             fp2
