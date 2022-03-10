@@ -24,6 +24,7 @@ const RacesList = ({ races }: RacesProps) => {
           name={race.name}
           country={race.circuit.country}
           raceTime={race.sessions.gp}
+          id={race.id}
         />
       ))}
     </ul>
