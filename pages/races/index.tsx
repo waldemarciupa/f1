@@ -8,34 +8,17 @@ import RacesList from '../../components/RacesList/RacesList';
 interface RacesProps {
   races: {
     id: string;
-    season: string;
-    round: string;
     name: string;
-    location: string;
-    country: string;
-    url: string;
     circuit: {
-      id: string;
-      name: string;
-      location: string;
       country: string;
-      firstGrandPrix: string;
-      numberOfLaps: string;
-      circuitLength: string;
-      raceDistance: string;
-      url: string;
     };
     sessions: {
-      fp1: string;
-      fp2: string;
-      fp3: string;
-      qualifying: string;
       gp: string;
     };
   }[];
 }
 const Home: NextPage<RacesProps> = ({ races }) => {
-  return <Layout>{<RacesList races={races} />}</Layout>;
+  return <Layout title='F1 - Races'>{<RacesList races={races} />}</Layout>;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -44,26 +27,11 @@ export const getStaticProps: GetStaticProps = async () => {
       query Races {
         races {
           id
-          season
-          round
           name
-          url
           circuit {
-            id
-            name
-            location
             country
-            firstGrandPrix
-            numberOfLaps
-            circuitLength
-            raceDistance
-            url
           }
           sessions {
-            fp1
-            fp2
-            fp3
-            qualifying
             gp
           }
         }

@@ -5,7 +5,6 @@ interface RacesProps {
   races: {
     id: string;
     name: string;
-    country: string;
     circuit: {
       country: string;
     };
