@@ -3,11 +3,12 @@ import { GetStaticProps } from 'next';
 import { gql } from '@apollo/client';
 import client from '../../apollo-client';
 import Layout from '../../components/Layout';
+import Schedule from '../../components/Schedule/Schedule';
 
 const Race: NextPage = ({ race }) => {
   return (
     <Layout title={race.name}>
-      <h1>Race id: {race.id}</h1>
+      <Schedule sessions={race.sessions} />
     </Layout>
   );
 };

@@ -1,0 +1,26 @@
+.date {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.session {
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.session span {
+  display: inline-block;
+  padding-right: 4px;
+  width: 40px;
+}
+
+.session span:first-of-type {
+  width: 100px;
+}
+
+.race {
+  font-weight: bold;
+  margin-top: 8px;
+}
